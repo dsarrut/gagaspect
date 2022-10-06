@@ -9,7 +9,7 @@ data
 pth
 scripts
 temp
-output
+output/?*.*
 
 jobs/*out
 
