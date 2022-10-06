@@ -10,6 +10,8 @@ pth
 scripts
 temp
 output/?*.*
+run.*
+
 
 jobs/*out
 

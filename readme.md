@@ -23,7 +23,7 @@ Generate training dataset for ARF. 1e9 is about 100 MB (15 min with 4 threads).
 
 ## GAGA source : training dataset and train the condGAN
 
-    ./gagaspect/spect_gaga_training_dataset.py json/training_dataset_gaga_v1.json
+    ./gagaspect/spect_gaga_training_dataset.py json/training_dataset_gaga_v1.json --rad Tc99m
 
 The coordinate system is the one of Geant4, considering that the ct image is centered. 
 
@@ -45,7 +45,7 @@ The computation is about 1h45 for 60k epoch (Jean Zay GPU).
 
 The reference simulation is "brute force", so very long. Using the CT as phantom and a voxelized activity source. In test1, the activity is composed of 4 spheres.  
 
-    ./gagaspect/spect_simulation.py json/test1_gaga_garf.json --nogarf --nogaga -t 4 -a 1e6 -o output
+    ./gagaspect/spect_simulation.py json/test1_gaga_garf.json --nogarf --nogaga -t 4 --rad Tc99m -a 1e6 -o output
 
 The computation time is about 6k PPS with 1 threads. 
 
