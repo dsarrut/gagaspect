@@ -1,0 +1,13 @@
+
+results/run.*
+results/data
+results/jobs
+example_rtk
+example_rtk2
+.idea
+save
+
+jobs/*out
+
+__pycache__
+.DS_Store

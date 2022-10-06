@@ -1,0 +1,29 @@
+{
+  "# Input CT image": "",
+  "ct_image": "./data/291_CT_4mm.mhd",
+  "table_mat": "./data/Schneider2000MaterialsTable.txt",
+  "table_density": "./data/Schneider2000DensitiesTable.txt",
+  "density_tolerance_gcm3": 0.1,
+
+  "# Input radionuclide": "",
+  "radionuclide": "Lu177",
+
+  "# Input total simulated activity in the whole image, in Bq": "",
+  "activity_bq": 5e7,
+  "## 5e7 = 2h":"",
+
+  "spect_radius_mm": 410,
+  "spect_heads" : 4,
+  "spect_angles" : 30,
+  "spect_table_shift_mm" : 150,
+  "activity_source": "data/four_spheres.mhd",
+
+  "# Option: number of threads": "",
+  "number_of_threads": 1,
+
+  "# Option: visualisation (for debug)": "",
+  "visu": false,
+
+  "# verbosity": "",
+  "verbose": true
+}
