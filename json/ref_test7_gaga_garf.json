@@ -1,0 +1,44 @@
+{
+  "# Input CT image": "",
+  "ct_image": "./data/291_CT_4mm.mhd",
+  "table_mat": "./data/Schneider2000MaterialsTable.txt",
+  "table_density": "./data/Schneider2000DensitiesTable.txt",
+  "density_tolerance_gcm3": 0.1,
+
+  "# Input radionuclide": "",
+  "# Input total simulated activity in the whole image, in Bq": "",
+  "radionuclide": "Lu177",
+  "activity_source": "data/four_spheres.mhd",
+  "activity_bq": 1e8,
+
+  "# spect options": "",
+  "spect_radius_mm": 410,
+  "spect_heads" : 4,
+  "spect_angles" : 1,
+  "# patient SupInf shift to center the camera": "",
+  "spect_table_shift_mm" : 150,
+
+  "# use gaga source? (gaga_pth=false if no use) ": "",
+  "##gaga_pth": "pth/train_test001_GP_0GP_10_60000.pth",
+  "#gaga_pth": "pth/train_gaga_v001_GP_0GP_10_60000.pth",
+  "gaga_pth": "pth_Tc99m/train_gaga_v002_GP_0GP_10_60000.pth",
+  "gaga_cond_direction": false,
+  "gaga_backward_distance_mm": 600,
+  "gaga_batch_size": 1e5,
+  "gaga_energy_threshold_keV": 1,
+
+  "# use garf ?": "",
+  "##garf_pth": "pth/arf_Lu177_v003_small.pth",
+  "#garf_pth": "pth/arf_Lu177_v003.pth",
+  "garf_pth": "pth_Tc99m/arf_dyb0u6mp_Tc99m_v003.pth",
+  "garf_batch_size": 1e5,
+
+  "# Option: number of threads": "",
+  "number_of_threads": 1,
+
+  "# Option: visualisation (for debug)": "",
+  "visu": false,
+
+  "# verbosity": "",
+  "verbose": true
+}

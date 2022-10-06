@@ -1,11 +1,15 @@
 
-results/run.*
-results/data
-results/jobs
-example_rtk
-example_rtk2
+results_Tc99m
+pth_Tc99m
+private
+results
 .idea
 save
+data
+pth
+scripts
+temp
+output
 
 jobs/*out
 
