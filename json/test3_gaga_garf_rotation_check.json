@@ -1,6 +1,6 @@
 {
   "# Input CT image": "",
-  "ct_image": "./data/291_CT_4mm.mhd",
+  "ct_image": "./data/ct_5mm.mhd",
   "table_mat": "./data/Schneider2000MaterialsTable.txt",
   "table_density": "./data/Schneider2000DensitiesTable.txt",
   "density_tolerance_gcm3": 0.1,
@@ -8,7 +8,7 @@
   "# Input radionuclide": "",
   "# Input total simulated activity in the whole image, in Bq": "",
   "radionuclide": "Tc99m",
-  "activity_source": "data/five_aligned_sources.mhd",
+  "activity_source": "data/three_spheres.mhd",
   "activity_bq": 1e8,
 
   "# spect options": "",
@@ -16,10 +16,10 @@
   "spect_heads" : 4,
   "spect_angles" : 30,
   "# patient SupInf shift to center the camera": "",
-  "spect_table_shift_mm" : 150,
+  "spect_table_shift_mm" : 0,
 
   "# use gaga source? (gaga_pth=false if no use) ": "",
-  "gaga_pth": "pth_Tc99m/train_gaga_v001_GP_0GP_10_60000.pth",
+  "gaga_pth": "pth_Tc99m/train_gaga_v001_GP_0GP_10_60000_wjmkh2ve.pth",
   "gaga_cond_direction": true,
   "gaga_backward_distance_mm": 600,
   "gaga_batch_size": 1e5,

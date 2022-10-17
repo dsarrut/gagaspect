@@ -11,6 +11,7 @@ scripts
 temp
 output/?*.*
 run.*
+jobs/
 
 
 jobs/*out

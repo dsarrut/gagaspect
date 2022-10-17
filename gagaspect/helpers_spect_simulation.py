@@ -64,9 +64,10 @@ def make_spect_simulation(param, sim=None):
 
     # add the voxelized activity source
     if param.gaga_pth == "":
-        add_voxelized_source(sim, ct, param)
+        source = add_voxelized_source(sim, ct, param)
     else:
-        add_gaga_source(sim, param)
+        source = add_gaga_source(sim, param)
+    print('Source translation', source.position.translation)
 
     # add stat actor
     stats = sim.add_actor("SimulationStatisticsActor", "Stats")
@@ -127,12 +128,14 @@ def add_spect_arf(sim, param):
     )
     tr, rot = gate.volume_orbiting_transform("z", 0, 360, nb_heads, itr, irot)
 
+    print('Plane distance according to head center', pos)
+
     heads = []
     for i in range(param.spect_heads):
         # fake spect head
         head = gate_spect.add_ge_nm67_fake_spect_head(sim, f"spect_{i}")
-        head.translation = [0, 0, -15 * cm]
         head.translation = tr[i]
+        print('head translation', i, head.translation)
         head.rotation = gate.rot_g4_as_np(rot[i])
         heads.append(head)
 
@@ -143,7 +146,6 @@ def add_spect_arf(sim, param):
         detector_plane.translation = [0, 0, pos]
         detector_plane.material = "G4_Galactic"
         detector_plane.color = [1, 0, 0, 1]
-        print(detector_plane)
 
         # arf actor
         arf = sim.add_actor("ARFActor", f"arf_{i}")
@@ -186,7 +188,7 @@ def add_gaga_source(sim, param):
     rad_yield = np.sum(w)
     print(f'Rad "{param.radionuclide}" yield is {rad_yield}')
     gsource.activity = (
-        param.activity_bq * Bq / sim.user_info.number_of_threads * rad_yield
+            param.activity_bq * Bq / sim.user_info.number_of_threads * rad_yield
     )
     gsource.pth_filename = param.gaga_pth
     gsource.position_keys = ["PrePosition_X", "PrePosition_Y", "PrePosition_Z"]
@@ -215,6 +217,7 @@ def add_gaga_source(sim, param):
         voxelized_cond_generator.generate_condition,
     )
     gsource.generator = gen
+    return gsource
 
 
 def add_digitizer(sim, param, add_fake_channel=False):

@@ -28,6 +28,7 @@ def go(
 ):
     # get the param dic structure
     param = read_json_param(json_param)
+    #FIXME if not exist ?
 
     # update param from command line
     update_param(param, visu, threads, activity_bq, rad)
